@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Le Blog des programmeurs</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Productique Québec</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Index</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/post1-bg.jfif');padding: 100px 0;" >
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <!-- Début titre-->
+                        <h1>Projet de métrologie avec réalité augmenté</h1>
+                        <h2 class="subheading">du rêve à la réalité...</h2>
+                        <span class="meta">
+                            <p class="post-meta">
+                                Ajouté par <a href="https://github.com/TonyGauth">Tony</a> le 24 septembre 2023
+                            </p>
+                        </span>
+                        <!-- fin titre-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Début texte-->
+                    <h1 id="projet">Projet</h1>
+                    <p>Ce projet démontre un prototype fonctionnel d'une série de
+                        technologie mise en place ensemble pour moderniser un exercice de
+                        Répétabilité de Reproductibilité des instruments de mesure (Gage
+                        R&amp;R) classique. Dans ce projet, la session se déroule au travers de
+                        la réalité augmentée programmée grâce au Unity Engine le tout supporté
+                        par le casque HoloLens.</p>
+                    <h2 id="table-des-matières">Table des matières</h2>
+                    <ul>
+                        <li><a href="#fonctionnalités">Fonctionnalités</a></li>
+                        <li><a href="#utilisation">Utilisation</a></li>
+                        <li><a href="#contact">Contact</a>
+                            <ul>
+                                <li><a href="#résolution-de-problèmes-et-support">Résolution de
+                                        problèmes et support</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#feuille-de-route">Feuille de route</a></li>
+                        <li><a href="#bogues-connus">Bogues connus</a></li>
+                        <li><a href="#crédits">Crédits</a></li>
+                        <li><a href="#droits-dauteur-et-licence">Droits d'auteur et
+                                licence</a></li>
+                        <li><a href="#notes-et-références">Notes et références</a>
+                            <ul>
+                                <li><a href="#dépendances">Dépendances</a></li>
+                                <li><a href="#recommendations">Recommendations</a></li>
+                                <li><a href="#suggestions">Suggestions</a></li>
+                                <li><a href="#plus-dinformations">Plus d'informations</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2 id="fonctionnalités">Fonctionnalités</h2>
+                    <p>L'application permet d'afficher exactement l'endroit où les mesures
+                        doivent être prises grâce à la réalité augmentée. Cela permet à
+                        l'opérateur d'être certain d'effectuer le Gage R&amp;R correctement, en
+                        plus de faire un suivi des mesures prises de façon automatisée.
+                        L'opérateur possède également un menu interactif, permettant de
+                        naturellement annuler la dernière mesure, changer de nom d'utilisateur
+                        ou même de reprendre la session au complet.</p>
+                    <p>Les données sont ensuite transférer par MQTT sur un <em>topic</em>
+                        défini lors de la compilation du projet. Les données acquises par des
+                        instruments de mesures externes sont également acheminées par MQTT sur
+                        un <em>topic</em> différent, créant ainsi une interface standard pour
+                        les entrées et sorties.</p>
+                    <p>Finalement, du code est disponible pour créer des tableaux
+                        intéressants basé sur Plotly, en JavaScript. Ceux-ci traduisent
+                        l'information essentiel pour tirer des conclusions de la session Gage
+                        R&amp;R, notamment où se situe les facteurs de variance.</p>
+                    <p><strong>Ce répertoire contient principalement le code source de
+                            l'application Unity</strong> et les fichiers de configuration
+                        nécessaires pour l'interface avec MQTT. Il contient également les
+                        scripts pour construire les figures, en utilisant la librairie
+                        Plotly.</p>
+                    <p><strong>Ce répertoire ne contient pas :</strong></p>
+                    <ul>
+                        <li>Une instance d'un serveur (ou d'un broker) MQTT</li>
+                        <li>Un service de base de donnée capable de stocké de la donnée
+                            provenant de session différentes</li>
+                        <li>Un service de télémétrie ou de tableau de bord capable d'afficher la
+                            donnée captée</li>
+                    </ul>
+                    <h2 id="utilisation">Utilisation</h2>
+                    <p>Pour utiliser ce projet, la scène doit être monté et lancé sur un
+                        appareil supporté. Présentement, le HoloLens 2 a été testé et jugé
+                        fonctionnel pour le projet. L'application peut alors être lancée depuis
+                        l'appareil. Voici quelques images démontrant les aspects intéressants de
+                        la réalité augmenté.</p>
+                    <ul>
+                        <li>
+                            <p>La position et l'état des mesures à prendre sont rendus clair
+                                grâce aux indicateurs visuels.</p>
+                            <p><img src="assets/post1/Rotation_autour_piece_stable.gif" /></p>
+                        </li>
+                        <li>
+                            <p>La prise de mesures automatique avec rétroaction visuelle
+                                garantit le bon déroulement de la session.</p>
+                            <p><img src="assets/post1/Prise_mesures.gif" /></p>
+                        </li>
+                        <li>
+                            <p>L'utilisation est devenu simplifiée en mettant de côté code QR et
+                                autre grâce à la détection de la géométrie de la pièce.</p>
+                            <p><img src="assets/post1/Detection_piece.gif" /></p>
+                        </li>
+                        <li>
+                            <p>L'interface MQTT permet d'utiliser une grande variété d'outils
+                                connectable.</p>
+                            <p><img src="assets/post1/Multi-outils.gif" /></p>
+                        </li>
+                    </ul>
+                    <h2 id="contact">Contact</h2>
+                    <p>Auteur du projet : <a href="anthony.gauthier@productique.quebec">Anthony Gauthier</a></p>
+                    <h3 id="résolution-de-problèmes-et-support">Résolution de problèmes et
+                        support</h3>
+                    <p>Pour tout problèmes, vous pouvez contacter l'auteur du projet. Notons
+                        que certaines fonctionnalités peuvent être indisponibles ne se sont pas
+                        supportées.</p>
+                    <h2 id="feuille-de-route">Feuille de route</h2>
+                    <p>Le projet est en soit un prototype démontrant les applications
+                        possibles ainsi que les enjeux entourant ces technologies. Des l'ajout
+                        des fonctionnalités suivantes pourrait grandement aider au potentiel de
+                        la mise en service d'un tel projet.</p>
+                    <ul>
+                        <li>Modularité des mesures : créer une interface simplifié pour changer
+                            la quantité et les noms des mesures</li>
+                        <li>Modularité des pièces : créer un guide simple ou un processus
+                            automatisé pour l'ajout de différente pièce</li>
+                        <li>Interface descente : possibilité à recevoir des instructions pour
+                            les pièces et leurs mesures</li>
+                        <li>Menu interactif avancé : produire davantage d'information au travers
+                            du menu interactif</li>
+                        <li>Amélioration du système de détection : fournir une détection plus
+                            fiable et constante</li>
+                    </ul>
+                    <h2 id="bogues-connus">Bogues connus</h2>
+                    <p><strong>Q: La pièce n'est pas détectée par l'application, que faire
+                            ?</strong></p>
+                    <p>R: La technologie en charge de la détection de pièce est le Vuforia
+                        Engine : Model Target. Plusieurs facteurs affectent la détection de la
+                        pièce, notamment l'éclairage, l'angle et la distance. Essayer de
+                        positionner la pièce de face comme dans la section <a href="#utilisation">utilisation</a> à une
+                        distance allant de 10 à 15 cm
+                        du casque HoloLens, le tout centré dans le champs visuel.</p>
+                    <h2 id="crédits">Crédits</h2>
+                    <ul>
+                        <li><a href="anthony.gauthier@productique.quebec">anthony.gauthier@productique.quebec</a>
+                            - auteur</li>
+                    </ul>
+                    <h2 id="droits-dauteur-et-licence">Droits d'auteur et licence</h2>
+                    <ul>
+                        <li><a href="MIT-LICENSE">Licence MIT</a></li>
+                        <li>Productique Québec Copyright © 2023</li>
+                    </ul>
+                    <h2 id="notes-et-références">Notes et références</h2>
+                    <h3 id="dépendances">Dépendances</h3>
+                    <ul>
+                        <li><a href="https://unity.com/fr">Plateforme de développement en temps
+                                réel Unity | Moteur pour la 2D, 3D, RV et RA</a> - Plateforme de
+                            développement RA</li>
+                        <li><a href="https://mqtt.org/">MQTT - The Standard for IoT
+                                Messaging</a> - Protocol d'échange et communication</li>
+                        <li><a href="https://www.microsoft.com/en-us/hololens/hardware#document-experiences">HoloLens
+                                2—Overview, Features, and Specs | Microsoft HoloLens</a> - Technologie
+                            supportant la réalité augmentée</li>
+                        <li><a href="https://library.vuforia.com/objects/model-targets">Model
+                                Targets | Vuforia Library</a> - Technologie pour la détection de
+                            pièce</li>
+                    </ul>
+                    <h3 id="recommendations">Recommendations</h3>
+                    <ul>
+                        <li><a href="https://fr.wikipedia.org/wiki/Gage_R%26R">Gage R&amp;R —
+                                Wikipédia</a> - Contexte pour l'outils statistique</li>
+                        <li><a href="https://plotly.com/graphing-libraries/">Plotly Open Source
+                                Graphing Libraries</a> - Librairie pour créer des figures
+                            scientifiques</li>
+                    </ul>
+                    <h3 id="suggestions">Suggestions</h3>
+                    <ul>
+                        <li><a href="https://mqttx.app/">MQTTX: Your All-in-one MQTT Client
+                                Toolbox</a> - Client MQTT avec UI pour rapidement et facilement tester
+                            les communications</li>
+                        <li><a href="https://www.mongodb.com/fr-fr/products/compass">MongoDB
+                                Compass | MongoDB</a> - Client MongoDB avec UI pour rapidement et
+                            facilement tester des <em>queries</em> et l'insertion de donnée</li>
+                        <li><a href="https://grafana.com/grafana/plugins/ae3e-plotly-panel/">Plotly
+                                panel plugin for Grafana | Grafana Labs</a> - Plugin supportant les
+                            figures Plotly sur Grafana</li>
+                    </ul>
+                    <!-- Fin texte-->
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
